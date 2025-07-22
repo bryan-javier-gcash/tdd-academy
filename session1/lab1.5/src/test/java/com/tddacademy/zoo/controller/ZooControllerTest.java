@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -65,9 +66,7 @@ class ZooControllerTest {
         // 2. Add expectation for status().isNotFound()
         
         // Your code here:
-        // mockMvc.perform(get("/api/zoos/999"))
-        //     .andExpect(...);
-
-
+         mockMvc.perform(get("/api/zoos/999"))
+             .andExpect(status().isNotFound());
     }
 } 
