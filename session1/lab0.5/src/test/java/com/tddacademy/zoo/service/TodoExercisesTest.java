@@ -29,10 +29,9 @@ class TodoExercisesTest {
     @Spy
     private NotificationService notificationService;
 
-//    @InjectMocks // Let Mockito inject manually
+    @InjectMocks
     private AnimalService animalService;
 
-    @InjectMocks
     private ZooManager zooManager;
 
     private Animal simba;
@@ -45,7 +44,6 @@ class TodoExercisesTest {
         nala = new Animal("Nala", "Lion", 160.0, LocalDate.of(2020, 6, 20), "Healthy");
         timon = new Animal("Timon", "Meerkat", 2.5, LocalDate.of(2021, 3, 10), "Healthy");
 
-        animalService = new AnimalService(animalRepository);
         zooManager = new ZooManager(animalService, notificationService);
     }
 
